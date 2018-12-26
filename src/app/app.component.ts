@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Hero } from '../app//hero/hero';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'myApp';
+  heros: Hero[] = [{
+    name: 'dao manh',
+    age: 15
+  }, {
+    name: 'dao manh2',
+    age: 17
+  }];
+  selectedHero: Hero;
+  onselect(hero: Hero): void {
+    this.selectedHero = hero;
+    console.log( ` ok  ${this.selectedHero.name}`);
+  }
+
 }
